@@ -1,7 +1,19 @@
 import { Box, Typography } from "@mui/material";
 import SizeButton from "./SizeButton";
+import { useContext } from "react";
+import { ButtonsContext } from "../context/ButtonsContext";
 
 const SideBar = () => {
+  const { size, setSize } = useContext(ButtonsContext);
+  console.log(size);
+
+  const handleSize = (selectedSize: string) => {
+    if (size == selectedSize) {
+      setSize("");
+    } else {
+      setSize(selectedSize);
+    }
+  };
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Typography
@@ -21,12 +33,17 @@ const SideBar = () => {
           marginTop: "20px",
         }}
       >
-        <SizeButton label="XS" />
-        <SizeButton label="S" />
-        <SizeButton label="M" />
-        <SizeButton label="L" />
-        <SizeButton label="XL" />
-        <SizeButton label="XXL" />
+        <SizeButton
+          label="XS"
+          onClick={() => {
+            setSize("XS");
+          }}
+        />
+        <SizeButton label="S" onClick={() => handleSize("S")} />
+        <SizeButton label="M" onClick={() => handleSize("M")} />
+        <SizeButton label="L" onClick={() => handleSize("L")} />
+        <SizeButton label="XL" onClick={() => handleSize("XL")} />
+        <SizeButton label="XXL" onClick={() => handleSize("XXL")} />
       </Box>
     </Box>
   );

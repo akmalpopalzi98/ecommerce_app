@@ -1,6 +1,12 @@
 import { Button } from "@mui/material";
 
-const SizeButton = ({ label }: { label: string }) => {
+const SizeButton = ({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick: () => void;
+}) => {
   return (
     <Button
       sx={{
@@ -11,6 +17,7 @@ const SizeButton = ({ label }: { label: string }) => {
         borderRadius: "50%",
       }}
       variant="outlined"
+      onClick={onClick}
     >
       {label}
     </Button>
