@@ -5,7 +5,6 @@ import { ButtonsContext } from "../context/ButtonsContext";
 
 const SideBar = () => {
   const { size, setSize } = useContext(ButtonsContext);
-  console.log(size);
 
   const handleSize = (selectedSize: string) => {
     if (size == selectedSize) {
