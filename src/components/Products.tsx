@@ -28,6 +28,55 @@ const Products = () => {
       sizes: ["L"],
       image: "itemimage",
     },
+    {
+      id: 4,
+      title: "item3",
+      price: "22.00",
+      sizes: ["L", "XXL"],
+      image: "itemimage",
+    },
+    {
+      id: 5,
+      title: "item3",
+      price: "22.00",
+      sizes: ["L", "XS"],
+      image: "itemimage",
+    },
+    {
+      id: 6,
+      title: "item3",
+      price: "22.00",
+      sizes: ["L"],
+      image: "itemimage",
+    },
+    {
+      id: 7,
+      title: "item3",
+      price: "22.00",
+      sizes: ["L"],
+      image: "itemimage",
+    },
+    {
+      id: 8,
+      title: "item3",
+      price: "22.00",
+      sizes: ["XS", "S", "L", "M"],
+      image: "itemimage",
+    },
+    {
+      id: 9,
+      title: "item3",
+      price: "22.00",
+      sizes: ["S", "M", "XXL"],
+      image: "itemimage",
+    },
+    {
+      id: 10,
+      title: "item3",
+      price: "22.00",
+      sizes: ["L"],
+      image: "itemimage",
+    },
   ];
 
   let updatedItems = items;
