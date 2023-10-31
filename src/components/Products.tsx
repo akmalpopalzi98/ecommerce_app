@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Item from "./Item";
 import { useContext } from "react";
 import { ButtonsContext } from "../context/ButtonsContext";
@@ -12,7 +12,7 @@ const Products = () => {
       title: "item1",
       price: "22.00",
       sizes: ["S", "M"],
-      image: "itemimage",
+      image: "image",
     },
     {
       id: 2,
@@ -74,7 +74,7 @@ const Products = () => {
       id: 10,
       title: "item3",
       price: "22.00",
-      sizes: ["L"],
+      sizes: ["XL"],
       image: "itemimage",
     },
   ];
@@ -90,7 +90,30 @@ const Products = () => {
     return <Item key={item.id} product={item} />;
   });
 
-  return <Box sx={{ display: "flex", gap: "10px" }}>{renderedItems}</Box>;
+  return (
+    <Box sx={{ width: "1000px", display: "flex", flexDirection: "column" }}>
+      <Typography
+        sx={{
+          fontFamily: "monospace",
+          fontWeight: "600",
+          marginBottom: "20px",
+        }}
+      >
+        {updatedItems.length} Product{updatedItems.length == 1 ? "" : "s"} found
+      </Typography>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4,240px)",
+          gap: "15px",
+          backgroundColor: "green",
+          justifyItems: "center",
+        }}
+      >
+        {renderedItems}
+      </Box>
+    </Box>
+  );
 };
 
 export default Products;
