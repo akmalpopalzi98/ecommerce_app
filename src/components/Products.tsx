@@ -1,7 +1,11 @@
 import { Box } from "@mui/material";
 import Item from "./Item";
+import { useContext } from "react";
+import { ButtonsContext } from "../context/ButtonsContext";
 
 const Products = () => {
+  const { size } = useContext(ButtonsContext);
+
   const items = [
     {
       id: 1,
@@ -26,9 +30,17 @@ const Products = () => {
     },
   ];
 
-  const renderedItems = items.map((item) => {
+  let updatedItems = items;
+  if (size !== "") {
+    updatedItems = items.filter((item) => {
+      return item.sizes.includes(size);
+    });
+  }
+
+  const renderedItems = updatedItems.map((item) => {
     return <Item key={item.id} product={item} />;
   });
+
   return <Box sx={{ display: "flex", gap: "10px" }}>{renderedItems}</Box>;
 };
 
