@@ -1,14 +1,17 @@
-import { Box } from "@mui/material";
-import SideBar from "./components/SideBar";
-import Products from "./components/Products";
+import { Box, Typography } from "@mui/material";
+import MainPage from "./components/MainPage";
 
 function App() {
   return (
     <Box>
-      <SideBar />
-      <Products />
+      <Typography
+        variant="h2"
+        sx={{ fontFamily: "monospace", textAlign: "center" }}
+      >
+        E-Shop
+      </Typography>
+      <MainPage />
     </Box>
   );
 }
-
 export default App;
