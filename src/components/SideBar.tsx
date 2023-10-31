@@ -36,14 +36,35 @@ const SideBar = () => {
         <SizeButton
           label="XS"
           onClick={() => {
-            setSize("XS");
+            handleSize("XS");
           }}
+          isActive={size == "XS"}
         />
-        <SizeButton label="S" onClick={() => handleSize("S")} />
-        <SizeButton label="M" onClick={() => handleSize("M")} />
-        <SizeButton label="L" onClick={() => handleSize("L")} />
-        <SizeButton label="XL" onClick={() => handleSize("XL")} />
-        <SizeButton label="XXL" onClick={() => handleSize("XXL")} />
+        <SizeButton
+          label="S"
+          onClick={() => handleSize("S")}
+          isActive={size == "S"}
+        />
+        <SizeButton
+          label="M"
+          onClick={() => handleSize("M")}
+          isActive={size == "M"}
+        />
+        <SizeButton
+          label="L"
+          onClick={() => handleSize("L")}
+          isActive={size == "L"}
+        />
+        <SizeButton
+          label="XL"
+          onClick={() => handleSize("XL")}
+          isActive={size == "XL"}
+        />
+        <SizeButton
+          label="XXL"
+          onClick={() => handleSize("XXL")}
+          isActive={size == "XXL"}
+        />
       </Box>
     </Box>
   );
