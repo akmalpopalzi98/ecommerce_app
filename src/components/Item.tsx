@@ -6,14 +6,18 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { useContext } from "react";
+import { BasketContext } from "../context/BasketContext";
 
-interface ItemProps {
+export interface ItemProps {
+  id: number;
   title: string;
   image: string;
   price: string;
 }
 
 const Item = ({ product }: { product: ItemProps }) => {
+  const { basketContent, setBasketContent } = useContext(BasketContext);
   return (
     <Card sx={{ width: "200px" }}>
       <CardMedia component="img" height="140" alt={product.title} />
@@ -56,6 +60,9 @@ const Item = ({ product }: { product: ItemProps }) => {
             "&:hover": {
               backgroundColor: "gray",
             },
+          }}
+          onClick={() => {
+            setBasketContent([...basketContent, product]);
           }}
         >
           Add to Basket
