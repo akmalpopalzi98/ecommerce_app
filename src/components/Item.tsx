@@ -1,4 +1,11 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 
 interface ItemProps {
   title: string;
@@ -17,7 +24,7 @@ const Item = ({ product }: { product: ItemProps }) => {
             fontWeight: "600",
           }}
           gutterBottom
-          variant="h5"
+          variant="h6"
           component="div"
         >
           {product.title}
@@ -33,6 +40,23 @@ const Item = ({ product }: { product: ItemProps }) => {
           {product.price}
         </Typography>
       </CardContent>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          sx={{
+            fontFamily: "monospace",
+            backgroundColor: "black",
+            width: "100%",
+            color: "white",
+          }}
+        >
+          Buy Now
+        </Button>
+      </Box>
     </Card>
   );
 };
