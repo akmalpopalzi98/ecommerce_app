@@ -6,15 +6,17 @@ import {
   SetStateAction,
 } from "react";
 
+import { ItemProps } from "../components/Item";
+
 // Define types for context values
 type BasketContextType = {
-  size: string;
-  setSize: Dispatch<SetStateAction<string>>;
+  basketContent: ItemProps[];
+  setBasketContent: Dispatch<SetStateAction<ItemProps[]>>;
 };
 
 const initialContextValue: BasketContextType = {
-  size: "", // initial text value
-  setSize: () => {}, // a dummy function to avoid errors
+  basketContent: [], // initial text value
+  setBasketContent: () => {}, // a dummy function to avoid errors
 };
 
 // Create a context with initial values
@@ -22,11 +24,11 @@ const BasketContext = createContext<BasketContextType>(initialContextValue);
 
 // Create a context provider component
 const BasketProvider = ({ children }: { children: ReactNode }) => {
-  const [size, setSize] = useState<string>("");
+  const [basketContent, setBasketContent] = useState<ItemProps[]>([]);
 
   const contextValue: BasketContextType = {
-    size,
-    setSize,
+    basketContent,
+    setBasketContent,
   };
 
   return (
