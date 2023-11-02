@@ -21,11 +21,12 @@ const Item = ({ product }: { product: ItemProps }) => {
         <Typography
           sx={{
             fontFamily: "monospace",
-            fontWeight: "600",
+            fontWeight: "400",
           }}
           gutterBottom
-          variant="h6"
+          variant="body1"
           component="div"
+          color="text.secondary"
         >
           {product.title}
         </Typography>
@@ -52,9 +53,12 @@ const Item = ({ product }: { product: ItemProps }) => {
             backgroundColor: "black",
             width: "100%",
             color: "white",
+            "&:hover": {
+              backgroundColor: "gray",
+            },
           }}
         >
-          Buy Now
+          Add to Basket
         </Button>
       </Box>
     </Card>

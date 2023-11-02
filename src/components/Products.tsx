@@ -51,7 +51,7 @@ const Products = () => {
     },
     {
       id: 7,
-      title: "item3",
+      title: "item4",
       price: "£9.00",
       sizes: ["L"],
       image: "itemimage",
@@ -65,14 +65,14 @@ const Products = () => {
     },
     {
       id: 9,
-      title: "item3",
+      title: "item5",
       price: "£12.00",
       sizes: ["S", "M", "XXL"],
       image: "itemimage",
     },
     {
       id: 10,
-      title: "item3",
+      title: "item6",
       price: "£22.00",
       sizes: ["XL"],
       image: "itemimage",
@@ -91,7 +91,7 @@ const Products = () => {
   });
 
   return (
-    <Box sx={{ width: "1000px", display: "flex", flexDirection: "column" }}>
+    <Box>
       <Typography
         sx={{
           fontFamily: "monospace",
@@ -99,18 +99,28 @@ const Products = () => {
           marginBottom: "20px",
         }}
       >
-        {updatedItems.length} Product{updatedItems.length == 1 ? "" : "s"} found
+        ({updatedItems.length}) Product{updatedItems.length == 1 ? "" : "s"}{" "}
+        found
       </Typography>
       <Box
         sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4,240px)",
-          gap: "15px",
-          backgroundColor: "green",
-          justifyItems: "center",
+          width: "1000px",
+          display: "flex",
+          flexDirection: "column",
+          maxHeight: "700px",
+          overflow: "scroll",
         }}
       >
-        {renderedItems}
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4,240px)",
+            gap: "15px",
+            justifyItems: "center",
+          }}
+        >
+          {renderedItems}
+        </Box>
       </Box>
     </Box>
   );

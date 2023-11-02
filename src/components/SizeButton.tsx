@@ -12,11 +12,16 @@ const SizeButton = ({
   return (
     <Button
       sx={{
-        backgroundColor: isActive ? "#e67e22" : "#d0d3d4",
+        backgroundColor: isActive ? "#566573" : "#d0d3d4",
         color: "black",
         borderColor: "#d0d3d4",
-        width: "60px",
+        width: "40px",
+        height: "40px",
         borderRadius: "50%",
+        "&:hover": {
+          backgroundColor: "grey",
+          borderColor: "transparent",
+        },
       }}
       variant="outlined"
       onClick={onClick}

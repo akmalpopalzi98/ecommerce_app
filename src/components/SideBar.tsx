@@ -26,10 +26,11 @@ const SideBar = () => {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(4,1fr)",
+          gridTemplateColumns: "repeat(3,1fr)",
           width: "350px",
           gap: "10px",
           marginTop: "20px",
+          height: "100px",
         }}
       >
         <SizeButton

@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import MainPage from "./components/MainPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
     <Box>
       <Typography
         variant="h2"
-        sx={{ fontFamily: "monospace", textAlign: "center" }}
+        sx={{ fontFamily: "pinyon script", textAlign: "left" }}
       >
         E-Shop
       </Typography>
