@@ -58,7 +58,8 @@ const Item = ({ product }: { product: ItemProps }) => {
             width: "100%",
             color: "white",
             "&:hover": {
-              backgroundColor: "gray",
+              backgroundColor: "orange",
+              color: "black",
             },
           }}
           onClick={() => {

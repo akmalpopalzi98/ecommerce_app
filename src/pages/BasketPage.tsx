@@ -4,6 +4,13 @@ import { BasketContext } from "../context/BasketContext";
 
 const BasketPage = () => {
   const { basketContent } = useContext(BasketContext);
+  const renderedItems = basketContent.map((item) => {
+    return (
+      <p key={item.id}>
+        {item.title} - {item.price}
+      </p>
+    );
+  });
   return (
     <Box
       sx={{
@@ -12,10 +19,11 @@ const BasketPage = () => {
         right: "20px",
         width: "300px",
         height: "500px",
-        backgroundColor: "green",
+        backgroundColor: "black",
+        color: "white",
       }}
     >
-      Basket Page
+      {renderedItems}
     </Box>
   );
 };

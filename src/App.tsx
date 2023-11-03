@@ -7,7 +7,7 @@ import { useState } from "react";
 function App() {
   const [active, setActive] = useState(false);
   return (
-    <Box>
+    <Box sx={{ backgroundColor: "wheat", height: "900px" }}>
       <Box sx={{ backgroundColor: "black" }}>
         <Typography
           variant="h2"

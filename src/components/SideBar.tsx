@@ -19,6 +19,7 @@ const SideBar = () => {
         sx={{
           fontFamily: "monospace",
           fontWeight: "600",
+          fontSize: "15px",
         }}
       >
         Sizes:
@@ -27,7 +28,7 @@ const SideBar = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(3,1fr)",
-          width: "350px",
+          width: "200px",
           gap: "10px",
           marginTop: "20px",
           height: "100px",

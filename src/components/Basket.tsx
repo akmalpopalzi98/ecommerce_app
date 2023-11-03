@@ -34,7 +34,15 @@ const Basket = ({
         }}
       >
         <ShoppingBasketIcon />
-        {basketContent.length}
+        <Box
+          sx={{
+            backgroundColor: "orange",
+            borderRadius: "20px",
+            width: "30px",
+          }}
+        >
+          {basketContent.length}
+        </Box>
       </Button>
     </Box>
   );

@@ -91,12 +91,13 @@ const Products = () => {
   });
 
   return (
-    <Box>
+    <Box sx={{ marginLeft: "100px" }}>
       <Typography
         sx={{
           fontFamily: "monospace",
-          fontWeight: "600",
+          fontWeight: "400",
           marginBottom: "20px",
+          fontSize: "15px",
         }}
       >
         ({updatedItems.length}) Product{updatedItems.length == 1 ? "" : "s"}{" "}
