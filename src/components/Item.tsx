@@ -13,7 +13,7 @@ export interface ItemProps {
   id: number;
   title: string;
   image: string;
-  price: string;
+  price: number;
 }
 
 const Item = ({ product }: { product: ItemProps }) => {

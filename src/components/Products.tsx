@@ -20,70 +20,70 @@ const Products = () => {
     {
       id: 1,
       title: "item1",
-      price: "£12.00",
+      price: 12.0,
       sizes: ["S", "M"],
       image: ShirtBlue,
     },
     {
       id: 2,
       title: "item2",
-      price: "£25.00",
+      price: 25.0,
       sizes: ["S", "M"],
       image: ShirtRed,
     },
     {
       id: 3,
       title: "item3",
-      price: "£32.00",
+      price: 32.0,
       sizes: ["L"],
       image: ShirtBlack,
     },
     {
       id: 4,
       title: "item4",
-      price: "£40.00",
+      price: 40.0,
       sizes: ["L", "XXL"],
       image: ShirtOrange,
     },
     {
       id: 5,
       title: "item5",
-      price: "£5.00",
+      price: 5.0,
       sizes: ["L", "XS"],
       image: JacketGray,
     },
     {
       id: 6,
       title: "item6",
-      price: "£10.00",
+      price: 10.0,
       sizes: ["L"],
       image: JacketRed,
     },
     {
       id: 7,
       title: "item7",
-      price: "£9.00",
+      price: 9.0,
       sizes: ["L"],
       image: JeansBlue,
     },
     {
       id: 8,
       title: "item8",
-      price: "£8.00",
+      price: 8.0,
       sizes: ["XS", "S", "L", "M"],
       image: JeansDark,
     },
     {
       id: 9,
       title: "item9",
-      price: "£12.00",
+      price: 12.0,
       sizes: ["S", "M", "XXL"],
       image: ShoeJogger,
     },
     {
       id: 10,
       title: "item10",
-      price: "£22.00",
+      price: 22.0,
       sizes: ["XL"],
       image: ShoeTrainers,
     },
@@ -110,7 +110,7 @@ const Products = () => {
           fontSize: "15px",
         }}
       >
-        ({updatedItems.length}) Product{updatedItems.length == 1 ? "" : "s"}{" "}
+        ({updatedItems.length}) Product{updatedItems.length == 1 ? "" : "s"}
         found
       </Typography>
       <Box
