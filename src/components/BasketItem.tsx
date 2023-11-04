@@ -51,8 +51,6 @@ const BasketItem = ({ product }: { product: ItemProps }) => {
         marginLeft: "10px",
         borderBottom: "solid white 2px",
         height: "90px",
-        backgroundColor: "brown",
-        position: "relative",
       }}
     >
       <img src={product.image} style={{ width: "50px", height: "50px" }} />
