@@ -19,13 +19,14 @@ const BasketPage = () => {
         position: "absolute",
         top: "80px",
         right: "0px",
-        width: "500px",
+        width: "600px",
         height: "500px",
         backgroundColor: " #1c2833 ",
         color: "white",
         display: "flex",
         flexDirection: "column",
         gap: "10px",
+        overflow: "scroll",
       }}
     >
       <Typography sx={{ textAlign: "center", marginTop: "10px" }}>

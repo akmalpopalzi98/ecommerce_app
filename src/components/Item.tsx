@@ -33,7 +33,12 @@ const Item = ({ product }: { product: ItemProps }) => {
   };
   return (
     <Card sx={{ width: "200px" }}>
-      <CardMedia component="img" height="140" alt={product.title} />
+      <CardMedia
+        component="img"
+        height="200"
+        alt={product.title}
+        image={product.image}
+      />
       <CardContent>
         <Typography
           sx={{

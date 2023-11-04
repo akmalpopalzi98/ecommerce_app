@@ -2,6 +2,16 @@ import { Box, Typography } from "@mui/material";
 import Item from "./Item";
 import { useContext } from "react";
 import { ButtonsContext } from "../context/ButtonsContext";
+import ShirtBlue from "../images/t-shirt-blue.png";
+import ShirtRed from "../images/t-shirt-red.png";
+import ShirtBlack from "../images/t-shirt-black.png";
+import ShirtOrange from "../images/t-shirt-orange.png";
+import JacketGray from "../images/jacket-grey.png";
+import JacketRed from "../images/jacket-red.png";
+import JeansBlue from "../images/jeans-blue.png";
+import JeansDark from "../images/jeans-dark.png";
+import ShoeJogger from "../images/shoes-joggers.png";
+import ShoeTrainers from "../images/shoes-trainers.png";
 
 const Products = () => {
   const { size } = useContext(ButtonsContext);
@@ -12,70 +22,70 @@ const Products = () => {
       title: "item1",
       price: "£12.00",
       sizes: ["S", "M"],
-      image: "image",
+      image: ShirtBlue,
     },
     {
       id: 2,
       title: "item2",
       price: "£25.00",
       sizes: ["S", "M"],
-      image: "itemimage",
+      image: ShirtRed,
     },
     {
       id: 3,
       title: "item3",
       price: "£32.00",
       sizes: ["L"],
-      image: "itemimage",
+      image: ShirtBlack,
     },
     {
       id: 4,
-      title: "item3",
+      title: "item4",
       price: "£40.00",
       sizes: ["L", "XXL"],
-      image: "itemimage",
+      image: ShirtOrange,
     },
     {
       id: 5,
-      title: "item3",
+      title: "item5",
       price: "£5.00",
       sizes: ["L", "XS"],
-      image: "itemimage",
+      image: JacketGray,
     },
     {
       id: 6,
-      title: "item3",
+      title: "item6",
       price: "£10.00",
       sizes: ["L"],
-      image: "itemimage",
+      image: JacketRed,
     },
     {
       id: 7,
-      title: "item4",
+      title: "item7",
       price: "£9.00",
       sizes: ["L"],
-      image: "itemimage",
+      image: JeansBlue,
     },
     {
       id: 8,
-      title: "item3",
+      title: "item8",
       price: "£8.00",
       sizes: ["XS", "S", "L", "M"],
-      image: "itemimage",
+      image: JeansDark,
     },
     {
       id: 9,
-      title: "item5",
+      title: "item9",
       price: "£12.00",
       sizes: ["S", "M", "XXL"],
-      image: "itemimage",
+      image: ShoeJogger,
     },
     {
       id: 10,
-      title: "item6",
+      title: "item10",
       price: "£22.00",
       sizes: ["XL"],
-      image: "itemimage",
+      image: ShoeTrainers,
     },
   ];
 

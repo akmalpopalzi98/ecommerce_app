@@ -4,9 +4,11 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useContext } from "react";
 import { BasketContext } from "../context/BasketContext";
+import CloseIcon from "@mui/icons-material/Close";
 
 const BasketItem = ({ product }: { product: ItemProps }) => {
-  const { itemQuantity, setItemQuantity } = useContext(BasketContext);
+  const { itemQuantity, setItemQuantity, basketContent, setBasketContent } =
+    useContext(BasketContext);
 
   const handleAdd = (product: ItemProps) => {
     const updatedList = [...itemQuantity];
@@ -25,6 +27,14 @@ const BasketItem = ({ product }: { product: ItemProps }) => {
       setItemQuantity(updatedList);
     }
   };
+
+  const handleDelete = (product: ItemProps) => {
+    const updatedList = basketContent.filter((item) => {
+      return item.id !== product.id;
+    });
+    setBasketContent(updatedList);
+  };
+
   const Quantity = itemQuantity.reduce((quantity, item) => {
     if (item.id === product.id) {
       quantity += 1;
@@ -40,9 +50,12 @@ const BasketItem = ({ product }: { product: ItemProps }) => {
         gap: "20px",
         marginLeft: "10px",
         borderBottom: "solid white 2px",
-        height: "70px",
+        height: "90px",
+        backgroundColor: "brown",
+        position: "relative",
       }}
     >
+      <img src={product.image} style={{ width: "50px", height: "50px" }} />
       <Typography variant="h6">{product.title}</Typography>
       <Typography variant="body1" sx={{ color: "grey" }}>
         {product.price}
@@ -65,6 +78,14 @@ const BasketItem = ({ product }: { product: ItemProps }) => {
         }}
       >
         <AddCircleOutlineIcon />
+      </Button>
+      <Button
+        sx={{ color: "white" }}
+        onClick={() => {
+          handleDelete(product);
+        }}
+      >
+        <CloseIcon />
       </Button>
     </Box>
   );
