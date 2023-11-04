@@ -1,27 +1,15 @@
 import { Box, Typography } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BasketContext } from "../context/BasketContext";
 import BasketItem from "../components/BasketItem";
-import { ItemProps } from "../components/Item";
 
 const BasketPage = () => {
   const { basketContent } = useContext(BasketContext);
-  const [basketList, setBasketList] = useState(basketContent);
-
-  const handleAddItem = (item: ItemProps) => {
-    const updatedList = [...basketList];
-    updatedList.push(item);
-    setBasketList(updatedList);
-  };
 
   const renderedItems = basketContent.map((item) => {
     return (
       <Box key={item.id}>
-        <BasketItem
-          product={item}
-          handleAdd={handleAddItem}
-          list={basketList}
-        />
+        <BasketItem product={item} />
       </Box>
     );
   });
