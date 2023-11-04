@@ -2,17 +2,30 @@ import { Box, Button, Typography } from "@mui/material";
 import { ItemProps } from "./Item";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { useContext } from "react";
+import { BasketContext } from "../context/BasketContext";
 
-const BasketItem = ({
-  product,
-  handleAdd,
-  list,
-}: {
-  product: ItemProps;
-  handleAdd: (item: ItemProps) => void;
-  list: ItemProps[];
-}) => {
-  const itemQuantity = list.reduce((quantity, item) => {
+const BasketItem = ({ product }: { product: ItemProps }) => {
+  const { itemQuantity, setItemQuantity } = useContext(BasketContext);
+
+  const handleAdd = (product: ItemProps) => {
+    const updatedList = [...itemQuantity];
+    updatedList.push(product);
+    setItemQuantity(updatedList);
+  };
+
+  const handleRemove = (product: ItemProps) => {
+    const indexOfItem = itemQuantity.findIndex(
+      (item) => item.id === product.id
+    );
+
+    if (indexOfItem !== -1) {
+      const updatedList = [...itemQuantity];
+      updatedList.splice(indexOfItem, 1);
+      setItemQuantity(updatedList);
+    }
+  };
+  const Quantity = itemQuantity.reduce((quantity, item) => {
     if (item.id === product.id) {
       quantity += 1;
     }
@@ -35,9 +48,14 @@ const BasketItem = ({
         {product.price}
       </Typography>
       <Typography variant="body1" sx={{ color: "grey" }}>
-        Quantity: {itemQuantity}
+        Quantity: {Quantity}
       </Typography>
-      <Button sx={{ color: "white" }}>
+      <Button
+        sx={{ color: "white" }}
+        onClick={() => {
+          handleRemove(product);
+        }}
+      >
         <RemoveCircleOutlineIcon />
       </Button>
       <Button
