@@ -17,7 +17,20 @@ export interface ItemProps {
 }
 
 const Item = ({ product }: { product: ItemProps }) => {
-  const { basketContent, setBasketContent } = useContext(BasketContext);
+  const { basketContent, setBasketContent, itemQuantity, setItemQuantity } =
+    useContext(BasketContext);
+
+  const addItemToBasket = () => {
+    const existingItem = basketContent.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      // If item with the same ID already exists, update itemQuantity state
+      setItemQuantity([...itemQuantity, product]);
+    } else {
+      // If item with the same ID does not exist, add it to basketContent state
+      setBasketContent([...basketContent, product]);
+    }
+  };
   return (
     <Card sx={{ width: "200px" }}>
       <CardMedia component="img" height="140" alt={product.title} />
@@ -62,9 +75,7 @@ const Item = ({ product }: { product: ItemProps }) => {
               color: "black",
             },
           }}
-          onClick={() => {
-            setBasketContent([...basketContent, product]);
-          }}
+          onClick={addItemToBasket}
         >
           Add to Basket
         </Button>
