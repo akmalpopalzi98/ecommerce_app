@@ -20,6 +20,7 @@ const SideBar = () => {
           fontFamily: "monospace",
           fontWeight: "600",
           fontSize: "15px",
+          marginLeft: "5px",
         }}
       >
         Sizes:

@@ -9,6 +9,9 @@ import CloseIcon from "@mui/icons-material/Close";
 const BasketItem = ({ product }: { product: ItemProps }) => {
   const { itemQuantity, setItemQuantity, basketContent, setBasketContent } =
     useContext(BasketContext);
+  console.log(itemQuantity);
+
+  const formattedPrice = product.price.toFixed(2);
 
   const handleAdd = (product: ItemProps) => {
     const updatedList = [...itemQuantity];
@@ -54,9 +57,9 @@ const BasketItem = ({ product }: { product: ItemProps }) => {
       }}
     >
       <img src={product.image} style={{ width: "50px", height: "50px" }} />
-      <Typography variant="h6">{product.title}</Typography>
+      <Typography variant="body1">{product.title}</Typography>
       <Typography variant="body1" sx={{ color: "grey" }}>
-        {product.price}
+        £{formattedPrice}
       </Typography>
       <Typography variant="body1" sx={{ color: "grey" }}>
         Quantity: {Quantity}

@@ -17,10 +17,10 @@ const BasketPage = () => {
     <Box
       sx={{
         position: "absolute",
-        top: "80px",
+        top: "70px",
         right: "0px",
         width: "600px",
-        height: "500px",
+        height: "800px",
         backgroundColor: " #1c2833 ",
         color: "white",
         display: "flex",

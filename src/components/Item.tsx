@@ -20,6 +20,8 @@ const Item = ({ product }: { product: ItemProps }) => {
   const { basketContent, setBasketContent, itemQuantity, setItemQuantity } =
     useContext(BasketContext);
 
+  const formattedPrice = product.price.toFixed(2);
+
   const addItemToBasket = () => {
     const existingItem = basketContent.find((item) => item.id === product.id);
 
@@ -60,7 +62,7 @@ const Item = ({ product }: { product: ItemProps }) => {
           variant="body2"
           color="text.secondary"
         >
-          {product.price}
+          £{formattedPrice}
         </Typography>
       </CardContent>
       <Box
