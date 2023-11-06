@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import { BasketContext } from "../context/BasketContext";
 import BasketItem from "../components/BasketItem";
+import BasketTotal from "../components/BasketTotal";
 
 const BasketPage = () => {
   const { basketContent } = useContext(BasketContext);
@@ -13,6 +14,7 @@ const BasketPage = () => {
       </Box>
     );
   });
+
   return (
     <Box
       sx={{
@@ -33,6 +35,9 @@ const BasketPage = () => {
         Cart
       </Typography>
       {renderedItems}
+      <Box sx={{ marginTop: "auto" }}>
+        <BasketTotal />
+      </Box>
     </Box>
   );
 };
