@@ -120,6 +120,7 @@ const Products = () => {
           flexDirection: "column",
           maxHeight: "700px",
           overflow: "scroll",
+          border: "solid 1px",
         }}
       >
         <Box

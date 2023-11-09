@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useContext } from "react";
 import { BasketContext } from "../context/BasketContext";
 
@@ -13,10 +13,25 @@ const BasketTotal = () => {
     <Box sx={{ backgroundColor: "#7f8c8d", height: "100px" }}>
       <Typography
         variant="body2"
-        sx={{ fontFamily: "monospace", textAlign: "right", marginRight: "5px" }}
+        sx={{
+          fontFamily: "monospace",
+          textAlign: "right",
+          marginRight: "15px",
+        }}
       >
         TOTAL £{total.toFixed(2)}
       </Typography>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          sx={{
+            backgroundColor: "#1c2833",
+            color: "whitesmoke",
+            "&:hover": { backgroundColor: "brown" },
+          }}
+        >
+          Buy Now
+        </Button>
+      </Box>
     </Box>
   );
 };

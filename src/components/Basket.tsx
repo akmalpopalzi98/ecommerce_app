@@ -10,7 +10,7 @@ const Basket = ({
   onClick: (bool: boolean) => void;
   active: boolean;
 }) => {
-  const { basketContent } = useContext(BasketContext);
+  const { basketContent, itemQuantity } = useContext(BasketContext);
 
   return (
     <Box
@@ -41,7 +41,7 @@ const Basket = ({
             width: "30px",
           }}
         >
-          {basketContent.length}
+          {itemQuantity.length}
         </Box>
       </Button>
     </Box>

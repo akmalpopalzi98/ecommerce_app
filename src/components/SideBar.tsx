@@ -33,6 +33,7 @@ const SideBar = () => {
           gap: "10px",
           marginTop: "20px",
           height: "100px",
+          marginLeft: "10px",
         }}
       >
         <SizeButton

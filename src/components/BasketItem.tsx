@@ -1,15 +1,15 @@
+import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { ItemProps } from "./Item";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import CloseIcon from "@mui/icons-material/Close";
 import { useContext } from "react";
 import { BasketContext } from "../context/BasketContext";
-import CloseIcon from "@mui/icons-material/Close";
 
 const BasketItem = ({ product }: { product: ItemProps }) => {
   const { itemQuantity, setItemQuantity, basketContent, setBasketContent } =
     useContext(BasketContext);
-  console.log(itemQuantity);
 
   const formattedPrice = product.price.toFixed(2);
 
@@ -54,14 +54,22 @@ const BasketItem = ({ product }: { product: ItemProps }) => {
         marginLeft: "10px",
         borderBottom: "solid white 2px",
         height: "90px",
+        justifyContent: "space-evenly",
+        flex: "1", // Added flex property
+        minWidth: "0", // Ensure text doesn't overflow the container
       }}
     >
-      <img src={product.image} style={{ width: "50px", height: "50px" }} />
-      <Typography variant="body1">{product.title}</Typography>
-      <Typography variant="body1" sx={{ color: "grey" }}>
+      <img
+        src={product.image}
+        style={{ width: "50px", height: "50px", objectFit: "cover" }} // Ensure images are contained within their box
+      />
+      <Typography variant="body1" sx={{ flex: "1" }}>
+        {product.title}
+      </Typography>
+      <Typography variant="body1" sx={{ color: "grey", minWidth: "50px" }}>
         £{formattedPrice}
       </Typography>
-      <Typography variant="body1" sx={{ color: "grey" }}>
+      <Typography variant="body1" sx={{ color: "grey", minWidth: "50px" }}>
         Quantity: {Quantity}
       </Typography>
       <Button
