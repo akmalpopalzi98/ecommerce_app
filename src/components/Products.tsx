@@ -2,6 +2,16 @@ import { Box, Typography } from "@mui/material";
 import Item from "./Item";
 import { useContext } from "react";
 import { ButtonsContext } from "../context/ButtonsContext";
+import ShirtBlue from "../images/t-shirt-blue.png";
+import ShirtRed from "../images/t-shirt-red.png";
+import ShirtBlack from "../images/t-shirt-black.png";
+import ShirtOrange from "../images/t-shirt-orange.png";
+import JacketGray from "../images/jacket-grey.png";
+import JacketRed from "../images/jacket-red.png";
+import JeansBlue from "../images/jeans-blue.png";
+import JeansDark from "../images/jeans-dark.png";
+import ShoeJogger from "../images/shoes-joggers.png";
+import ShoeTrainers from "../images/shoes-trainers.png";
 
 const Products = () => {
   const { size } = useContext(ButtonsContext);
@@ -9,73 +19,73 @@ const Products = () => {
   const items = [
     {
       id: 1,
-      title: "item1",
-      price: "£12.00",
+      title: "Blue Shirt",
+      price: 12.0,
       sizes: ["S", "M"],
-      image: "image",
+      image: ShirtBlue,
     },
     {
       id: 2,
-      title: "item2",
-      price: "£25.00",
+      title: "Red Shirt",
+      price: 25.0,
       sizes: ["S", "M"],
-      image: "itemimage",
+      image: ShirtRed,
     },
     {
       id: 3,
-      title: "item3",
-      price: "£32.00",
+      title: "Black Shirt",
+      price: 32.0,
       sizes: ["L"],
-      image: "itemimage",
+      image: ShirtBlack,
     },
     {
       id: 4,
-      title: "item3",
-      price: "£40.00",
+      title: "Orange Shirt",
+      price: 40.0,
       sizes: ["L", "XXL"],
-      image: "itemimage",
+      image: ShirtOrange,
     },
     {
       id: 5,
-      title: "item3",
-      price: "£5.00",
+      title: "Grey Jacket",
+      price: 5.0,
       sizes: ["L", "XS"],
-      image: "itemimage",
+      image: JacketGray,
     },
     {
       id: 6,
-      title: "item3",
-      price: "£10.00",
+      title: "Red Jacket",
+      price: 10.0,
       sizes: ["L"],
-      image: "itemimage",
+      image: JacketRed,
     },
     {
       id: 7,
-      title: "item4",
-      price: "£9.00",
+      title: "Blue Jeans",
+      price: 9.0,
       sizes: ["L"],
-      image: "itemimage",
+      image: JeansBlue,
     },
     {
       id: 8,
-      title: "item3",
-      price: "£8.00",
+      title: "Dark Jeans",
+      price: 8.0,
       sizes: ["XS", "S", "L", "M"],
-      image: "itemimage",
+      image: JeansDark,
     },
     {
       id: 9,
-      title: "item5",
-      price: "£12.00",
+      title: "Joggers",
+      price: 12.0,
       sizes: ["S", "M", "XXL"],
-      image: "itemimage",
+      image: ShoeJogger,
     },
     {
       id: 10,
-      title: "item6",
-      price: "£22.00",
+      title: "Trainers",
+      price: 22.0,
       sizes: ["XL"],
-      image: "itemimage",
+      image: ShoeTrainers,
     },
   ];
 
@@ -91,15 +101,16 @@ const Products = () => {
   });
 
   return (
-    <Box>
+    <Box sx={{ marginLeft: "100px" }}>
       <Typography
         sx={{
           fontFamily: "monospace",
-          fontWeight: "600",
+          fontWeight: "400",
           marginBottom: "20px",
+          fontSize: "15px",
         }}
       >
-        ({updatedItems.length}) Product{updatedItems.length == 1 ? "" : "s"}{" "}
+        ({updatedItems.length}) Product{updatedItems.length == 1 ? "" : "s"}
         found
       </Typography>
       <Box
@@ -109,6 +120,7 @@ const Products = () => {
           flexDirection: "column",
           maxHeight: "700px",
           overflow: "scroll",
+          border: "solid 1px",
         }}
       >
         <Box
