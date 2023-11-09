@@ -49,9 +49,3 @@ Install dependencies:
 Start the development server:
 
     npm run dev
-
-# Usage
-
-- Open the application in your web browser.
-- Enter specific search terms in the search bar and press Enter.
-- Explore the search results displayed in the grid layout.
